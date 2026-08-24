@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap");
+
+:root {
+  --paper: #faf7f0;
+  --paper-line: #ddd6c4;
+  --ink: #22252a;
+  --ink-soft: #5b5d63;
+  --navy: #2b3a55;
+  --navy-soft: #435374;
+  --pen-red: #c0392b;
+  --pen-red-soft: #e8c9c4;
+  --grow-green: #3f7d58;
+  --grow-green-soft: #cfe0d5;
+  --steady-gold: #c99a3a;
+  --steady-gold-soft: #ecdcb8;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans TC", -apple-system, sans-serif;
+  background-image: linear-gradient(var(--paper-line) 1px, transparent 1px);
+  background-size: 100% 2.15rem;
+  background-attachment: local;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: "Noto Serif TC", serif;
+  letter-spacing: 0.02em;
+}
+
+.mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+.topbar {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar .brand {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.topbar .brand svg {
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.1rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--navy-soft);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 1px 0 rgba(34, 37, 42, 0.04);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.badge.high {
+  background: var(--grow-green-soft);
+  color: var(--grow-green);
+}
+
+.badge.mid {
+  background: var(--steady-gold-soft);
+  color: var(--steady-gold);
+}
+
+.badge.low {
+  background: var(--pen-red-soft);
+  color: var(--pen-red);
+}
+
+table.roster {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.roster th {
+  text-align: left;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 700;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+table.roster td {
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px dashed var(--paper-line);
+  font-size: 0.95rem;
+}
+
+table.roster tr:hover td {
+  background: #fbf2ee;
+}
+
+.tier-select {
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--navy);
+  background: #fff;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.circle-mark {
+  position: relative;
+  display: inline-block;
+}
+
+.circle-mark::after {
+  content: "";
+  position: absolute;
+  inset: -8px -14px;
+  border: 2.5px solid var(--pen-red);
+  border-radius: 50% 55% 50% 60% / 55% 50% 60% 50%;
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+.login-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.field {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--paper-line);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.field:focus,
+.btn:focus-visible,
+.tier-select:focus-visible {
+  outline: 3px solid var(--steady-gold);
+  outline-offset: 1px;
+}
+
+.helptext {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.error-text {
+  color: var(--pen-red);
+  font-size: 0.85rem;
+}
